@@ -10,6 +10,7 @@ package daw.vehiculos;
  */
 public class Vehiculo {
 
+    // Atributos - características
     String matricula;
     String marca;
     String modelo;
@@ -17,7 +18,8 @@ public class Vehiculo {
     double tarifa;
     boolean disponible;
 
-    // el método constructor de la clase Vehiculo 
+    // el método constructor de la clase Vehiculo, se llama igual que la clase, 
+    //siempre es public, no devuelve valor, puede tener parámetros
     public Vehiculo(String matricula,
             String marca, String modelo, String color, double tarifa) {
         this.matricula = matricula;
@@ -27,7 +29,7 @@ public class Vehiculo {
         this.tarifa = tarifa;
         this.disponible = false;
     }
-// los métodos ‘get’ y ‘set’ de la clase Vehiculo 
+// los métodos ‘get’ y ‘set’ de la clase Vehiculo - acciones
 
     public String getMatricula() {
         return this.matricula;
