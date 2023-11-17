@@ -11,12 +11,12 @@ package daw.vehiculos;
 public class Vehiculo {
 
     // Atributos - características
-    String matricula;
-    String marca;
-    String modelo;
-    String color;
-    double tarifa;
-    boolean disponible;
+    private String matricula;
+    private String marca;
+    private String modelo;
+    private String color;
+    private double tarifa;
+    private boolean disponible;
 
     // el método constructor de la clase Vehiculo, se llama igual que la clase, 
     //siempre es public, no devuelve valor, puede tener parámetros
@@ -29,7 +29,9 @@ public class Vehiculo {
         this.tarifa = tarifa;
         this.disponible = false;
     }
-// los métodos ‘get’ y ‘set’ de la clase Vehiculo - acciones
+    
+    // los métodos ‘get’ y ‘set’ de la clase Vehiculo - acciones
+    //son public
 
     public String getMatricula() {
         return this.matricula;
@@ -71,19 +73,29 @@ public class Vehiculo {
         this.tarifa -= descuento;
     }
     
-    public static String datosVehiculo(Vehiculo v){
-        return """
-                           Datos de "Mi Cacharro"
-                           
-                           Matrícula: %s
-                           Marca: %s
-                           Modelo: %s
-                           Color: %s
-                           Tarifa: %.2f€
-                           
-                           """.formatted(v.getMatricula(), v.getMarca(),
-                                   v.getModelo(), v.getColor(),
-                                   v.getTarifa());
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Vehiculo{");
+        sb.append("matricula=").append(matricula);
+        sb.append(", marca=").append(marca);
+        sb.append(", modelo=").append(modelo);
+        sb.append(", color=").append(color);
+        sb.append(", tarifa=").append(tarifa);
+        sb.append(", disponible=").append(disponible);
+        sb.append('}');
+        return sb.toString();
     }
+    
+    
+    public void acelerar(double nuevaVel){
+        //this.velocidad += nuevaVel;
+    }
+    
+    public void frenar(double nuevaVel){
+        //this.velocidad -= nuevaVel;
+    }
+    
 
 }
